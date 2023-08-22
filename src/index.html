@@ -12,56 +12,24 @@
 
 <body>
 
-    <!-- Input -->
-    <div class="lift">
-
-        <div class="input" id="numb">
-            <form>
-                <input name="floors-input" id="floors-input" min="1" max="100" required type="number"
-                    placeholder="Floors:">
-                <input name="lifts-input" id="lifts-input" min="1" max="10" required type="number" placeholder="Lifts:">
-                <button id="submit" type="submit">Present Simulation</button>
-            </form>
-        </div>
-        <p class="solid">
-            <!--   <button type="button" >Up</button> <br> <br> -->
-            Floor 5 <br> <br>
-
-            <button type="button">Down</button> </p>
-        <br>
-
-        <p class="solid">
-            <button type="button">Up</button> <br> <br>
-            Floor 4 <br> <br>
-
-            <button type="button">Down</button> </p>
-            <br>
-
-        <p class="solid">
-            <button type="button">Up</button> <br> <br>
-            Floor 3 <br> <br>
-
-            <button type="button">Down</button> </p>
-            <br>
-
-        <p class="solid">
-            <button type="button">Up</button> <br> <br>
-            Floor 2 <br> <br>
-
-            <button type="button">Down</button> </p>
-            <br>
-
-        <p class="solid">
-            <button type="button">Up</button> <br> <br>
-            Floor 1 <br> <br>
-
-            <!-- <button type="button" >Down</button> </p> -->
-            <br>
-    </div>
+    <div class="form-container">
+			<form id="floor-plan-form">
+				
+				<div class="input-group">
+					<label for="floor-count">Enter number of floors</label>
+					<input type="number" name="floor-count" id="floor-count" />
+				</div>
+				<div class="input-group">
+					<label for="lift-count">Enter number of lifts</label>
+					<input type="number" name="lift-count" id="lift-count" />
+				</div>
+				<button>Generate Simulation</button>
+			</form>
+		</div>
+		<div id="plot"></div>
 
 
-
-    <script src="./js/main.js"></script>
+		<script src="./js/main.js" defer></script>
 </body>
 
 </html>
