@@ -41,7 +41,12 @@ floorPlanForm.addEventListener("submit", (e) => {
 function validateFloorPlanFormData(fd) {
     let floorCount = fd.get("floor-count");
     let liftCount = fd.get("lift-count");
-
+    if (floorCount.length === 0 || liftCount.length === 0) {
+        if (floorCount.length === 0 && liftCount.length === 0) alert("Blank floor and lift count");
+        else if (floorCount.length === 0) alert("Blank floor count");
+        else alert("Blank lift count");
+        return false;
+    }
     floorCount = parseInt(floorCount);
     liftCount = parseInt(liftCount);
     if (floorCount <= 0) {
@@ -54,6 +59,14 @@ function validateFloorPlanFormData(fd) {
     }
     if (liftCount <= 0) {
         alert("Please enter a valid number");
+        return false;
+    }
+    if (floorCount > 7) {
+        alert("Max 7 floors allowed");
+        return false;
+    }
+    if (liftCount > 7) {
+        alert("Max 7 lifts allowed");
         return false;
     }
 
